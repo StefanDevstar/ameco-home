@@ -1,0 +1,63 @@
+<div class="card theme-wizard mb-5" id="wizard">
+    <div class="card-header bg-light pt-3 pb-2">
+        <ul class="nav justify-content-between nav-wizard">
+            {% for tab_num in 1..4 %}
+                <li class="nav-item">
+                    <a class="nav-link {% if tab_num == active_tab %}active fw-semi-bold{% else %}fw-semi-bold{% endif %}"
+                        data-bs-toggle="tab" data-wizard-step="data-wizard-step">
+                        <span class="nav-item-circle-parent">
+                            <span class="nav-item-circle">
+                                <span class="fas fa-lock"></span>
+                            </span>
+                        </span>
+                        <span class="d-none d-md-block mt-1 fs--1">
+                            {% if tab_num == 1 %}
+                                Account
+                            {% elif tab_num == 2 %}
+                                Personal
+                            {% elif tab_num == 3 %}
+                                The Basics
+                            {% elif tab_num == 4 %}
+                                Done
+                            {% endif %}
+                        </span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="card-body py-4" id="wizard-controller">
+        <div class="tab-content">
+            <div class="tab-pane active px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-tab{{ active_tab }}">
+                <form class="needs-validation" novalidate="novalidate" id="{{ form_id }}">
+                    <div class="mb-3">
+                        {% if form_heading %}
+                            <h3>{{ form_heading }}</h3>
+                        {% endif %}
+                    </div>
+                    <!-- Form fields and buttons here -->
+                    {% for field in form_fields %}
+                        <div class="mb-3">
+                            <label for="{{ field.id }}" class="form-label
+                                {% if field.required %}required{% endif %}">
+                                {{ field.label }}
+                            </label>
+                            <input type="{{ field.type }}" class="form-control" id="{{ field.id }}" name="{{ field.name }}"
+                                {% if field.required %}required{% endif %} {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}>
+                            <div class="invalid-feedback">{{ field.invalid_feedback }}</div>
+                        </div>
+                    {% endfor %}
+                    
+                    <div class="d-grid">
+                        <button class="btn btn-primary px-5 px-sm-6" type="button" id="{{ form_action_id }}">
+                            {{ form_button_text }}
+                            {% if form_button_icon %}
+                                <span class="fas fa-chevron-right ms-2" data-fa-transform="shrink-3"></span>
+                            {% endif %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

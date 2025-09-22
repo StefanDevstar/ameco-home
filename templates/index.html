@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta
+    content="advanced search, agency, agent, classified, directory, house, listing, property, real estate, real estate agency, real estate agent, realestate, realtor, rental"
+    name="keywords" />
+  <meta content="Ameco Homes LLC" name="description" />
+  <meta content="Ameco Homes" name="springreen" />
+  <!-- css file -->
+  <link href="/static/bootstrap.min.css" rel="stylesheet" />
+  <link href="/static/jquery-ui.min.css" rel="stylesheet" />
+  <link href="/static/ace-responsive-menu.css" rel="stylesheet" />
+  <link href="/static/menu.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css"
+    integrity="sha512-6f7HT84a/AplPkpSRSKWqbseRTG4aRrhadjZezYQ0oVk/B+nm/US5KzQkyyOyh0Mn9cyDdChRdS9qaxJRHayww=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="/static/bootstrap-select.min.css" rel="stylesheet" />
+  <link href="/static/animate.css" rel="stylesheet" />
+  <link href="/static/slider.css" rel="stylesheet" />
+  <link href="/static/style.css" rel="stylesheet" />
+  <link href="/static/ud-custom-spacing.css" rel="stylesheet" />
+  <!-- Responsive stylesheet -->
+  <link href="/static/responsive.css" rel="stylesheet" />
+  <!-- Title -->
+  <title>Sell Your Property! - Ameco Homes </title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon//favicon-16x16.png">
+  <link rel="manifest" href="/static/favicon//site.webmanifest">
+  <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#107bc7">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#cd1414">
+  <style>
+    /* Add this CSS to ensure uniform card sizes and centering */
+    .iconbox-style1 {
+      height: 250px;
+      /* Adjust the height as needed */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      /* Optional: Add a border for better visibility */
+      border-radius: 10px;
+      /* Optional: Add rounded corners */
+      background-color: #fff;
+      /* Optional: Add background color */
+    }
+
+    .iconbox-style1 i {
+      margin-bottom: 15px;
+      /* Adjust spacing between the icon and text */
+    }
+
+    .iconbox-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      /* Ensures the content stretches to fill the available space */
+    }
+
+    .title {
+      margin-bottom: 10px;
+      /* Space between title and text */
+    }
+
+    .text {
+      margin: 0;
+      /* Remove any default margin */
+    }
+
+    .feature-listing-slider .item {
+      height: 100%;
+      /* Ensures each item takes up the full height */
+    }
+
+    .listing-style1 {
+      height: 100%;
+      /* Adjust this height as needed for uniformity */
+      padding: 20px;
+      /* Optional: Add padding for spacing */
+      border: 1px solid #ccc;
+      /* Optional: Add border for visual separation */
+    }
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+      height: 400px;
+      /* Adjust this value as needed */
+    }
+
+    .testimonial-content {
+      flex: 1;
+      /* This makes sure the content area takes up the remaining space */
+      overflow: hidden;
+      /* Ensures content does not overflow */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper ovh">
+    <div class="preloader"></div>
+    <header class="header-nav nav-homepage-style stricky main-menu">
+      <nav class="posr">
+        <div class="container posr menu_bdrt1">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-auto">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="logos mr40">
+                  <a class="header-logo logo1" href="/"><img alt="Ameco Homes" width="150px" height="75px"
+                      style="font-size: 28px;color: white;" src="/static/images/logo.png" /></a>
+                  <a class="header-logo logo2" href="/"><img alt="Ameco Homes" width="150px" height="75px"
+                      style="font-size: 28px;color: black;" src="/static/images/logo.png" /></a>
+                </div>
+                <!-- Responsive Menu Structure-->
+                <ul class="ace-responsive-menu" data-menu-style="horizontal" id="respMenu">
+                  <li class="visible_list"> <a class="list-item" href="/"><span class="title">Home</span></a></li>
+                  <li class="megamenu_style"> <a class="list-item" href="/about"><span class="title">Who we
+                        are</span></a>
+                  </li>
+                  <li class="visible_list"> <a class="list-item" href="#!"><span class="title">Blogs</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="d-flex align-items-center">
+                <a class="login-info d-flex align-items-center" href="/fill_more"><span class="d-none d-xl-block">Get
+                    Your
+                    Free Cash Offer</span></a>
+                <a class="ud-btn add-property menu-btn bdrs60 mx-2 mx-xl-4" href="tel:+14708272901">Call
+                  Now<i class="fa-solid fa-arrow-right-long"></i></a>
+                <a class="sidemenu-btn filter-btn-right" href="#"><img alt="" class="img-1"
+                    src="/static/images/nav-icon-white.svg" /><img alt="" class="img-2"
+                    src="/static/images/nav-icon-dark.svg" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="rightside-hidden-bar">
+      <div class="hsidebar-header">
+        <div class="sidebar-close-icon"><i class="fa-solid fa-bars-staggered"></i></div>
+        <h4 class="title">Welcome to Ameco Homes</h4>
+      </div>
+      <div class="hsidebar-content">
+        <div class="hiddenbar_navbar_content">
+          <div class="hiddenbar_navbar_menu">
+            <ul class="navbar-nav ">
+              <li class="nav-item"> <a class="nav-link" href="/about">About Us</a></li>
+              <li class="nav-item"> <a class="nav-link" href="" role="button">Terms and Conditions</a></li>
+              <li class="nav-item"> <a class="nav-link" href="" role="button">Privacy Policy</a></li>
+              <li class="nav-item"> <a class="nav-link" href="" role="button">Live Chat</a></li>
+              <li class="nav-item"> <a class="nav-link" href="tel:+14708272901">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="hiddenbar_footer position-relative bdrt1">
+            <div class="row pt30 pb30 pl15">
+              <div class="col-auto">
+                <div class="contact-info">
+                  <p class="info-title dark-color">Get Your Free Cash Offer</p>
+                  <h6 class="info-phone dark-color"><a href="/fill_more">Click Here</a> To Fill the form</h6>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="contact-info">
+                  <p class="info-title dark-color">Need Live Support?</p>
+                  <h6 class="info-mail dark-color"><a href="mailto:hello@amecohomes.com">hello@amecohomes.com</a></h6>
+                </div>
+              </div>
+            </div>
+            <div class="row pt30 pb30 bdrt1">
+              <div class="col-auto">
+                <div class="social-style-sidebar d-flex align-items-center pl30">
+                  <h6 class="me-4 mb-0">Follow us</h6>
+                  <a class="me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                  <a class="me-3" href=""><i class="fab fa-twitter"></i></a>
+                  <a class="me-3" href=""><i class="fab fa-instagram"></i></a>
+                  <a class="me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobilie_header_nav stylehome1" id="page">
+      <div class="mobile-menu">
+        <div class="header innerpage-style">
+          <div class="menu_and_widgets">
+            <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
+              <a class="menubar" href="#menu"><img alt="" src="/static/images/mobile-dark-nav-icon.svg" /></a>
+              <a class="mobile_logo" href="#"><img alt="" src="/static/images/logo.png" width="75px"
+                  height="50px" /></a>
+              <a href="#!"><span class="icon fz18 far fa-user-circle"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.mobile-menu -->
+      <nav class="" id="menu">
+        <ul>
+          <li><span class="menu-btn" style="color: black;">Home</span></li>
+          <li><span class="menu-btn" style="color: black;">Who we are </span></li>
+          <li><span class="menu-btn" style="color: black;">Blogs</span></li>
+          <li class="px-3 mobile-menu-btn">
+            <a class="ud-btn btn-thm text-white" href="/fill_more">Get Free Cash Offer<i
+                class="fa-solid fa-arrow-right-long"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="body_content_wrapper">
+      <!-- Home Banner Style V1 -->
+      <section class="home-banner-style1 p0">
+        <div class="home-style1">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-11 mx-auto">
+                <div class="inner-banner-style1 text-center">
+                  <h6 class="hero-sub-title animate-up-1">Sell Your Property Fast with</h6>
+                  <h2 class="hero-title animate-up-2">Ameco Homes</h2>
+                  <p class="hero-text fz15 animate-up-3">for cash !</p>
+                  <div class="advance-search-tab mt70 mt30-md mx-auto animate-up-3">
+                    <ul class="nav nav-tabs p-0 m-0" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button aria-controls="home" aria-selected="true" class="nav-link active" data-bs-target="#home"
+                          data-bs-toggle="tab" id="home-tab" role="tab" type="button">To Sell</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button aria-controls="profile" aria-selected="false" class="nav-link" data-bs-target="#profile"
+                          data-bs-toggle="tab" id="profile-tab" role="tab" type="button">To Buy</button>
+                      </li>
+
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      {% if error %}
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Oh snap!</strong> {{error}}
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
+                      </div>
+                      {% endif %}
+                      <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
+                        <div class="advance-content-style1">
+                          <form class="row g-3" name="tosell" method="post">
+                            <div class="col-md-4">
+                              <div class="box-search">
+                                <label for="s1">Address
+                                  (required)</label>
+                                <input class="form-control bgc-f7 bdrs12" name="addy" id="s1"
+                                  placeholder="123, Broadway, Newark NJ 12345" type="text" value="{{addy}}" />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="box-search">
+                                <label for="s1">Phone
+                                  (required)</label>
+                                <input class="form-control bgc-f7 bdrs12" name="phone"
+                                  placeholder="Enter a phone number" type="number" value="{{phone}}" />
+                              </div>
+                            </div>
+
+                            <div class="col-md-4">
+                              <label for="s1" style="color: white;">A
+                                Button</label>
+                              <button class="btn btn-primary btn-sm form-control bdrs5"
+                                style="max-height: 50px;color: white;">GET YOUR FREE
+                                CASH OFFER</button>
+                            </div>
+                          </form>
+                          <p
+                            style="text-transform: uppercase; font-size: 15px;font-family: monospace;padding: 0; padding-top: 10px;">
+                            UPON CLICKING SUBMIT * I CONSENT TO RECEIVE MARKETING TEXT MESSAGES FROM LEVERAGE COMPANIES
+                            AT THE NUMBER PROVIDED</p>
+                          <p
+                            style="text-transform: lowercase; font-size: 10px;font-family: 'Courier New', Courier, monospace; padding: 0;padding-top: 2px;">
+                            *Estimate of 4 messages a month. Message and data rates may apply. Reply STOP to opt out at
+                            any time. Read our Privacy Policy.</p>
+                        </div>
+                      </div>
+                      <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
+                        <div class="advance-content-style1">
+                          <form class="row g-3" name="tobuy" method="post">
+                            <div class="col-md-4">
+                              <div class="box-search">
+                                <label for="s1">Budget
+                                  (required) $</label>
+                                <input class="form-control bgc-f7 bdrs12" name="budget" id="s1" placeholder="100000"
+                                  type="number" value="{{budget}}" />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="box-search">
+                                <label for="s1">Phone
+                                  (required)</label>
+                                <input class="form-control bgc-f7 bdrs12" name="phone"
+                                  placeholder="Enter a phone number" type="number" value="{{phone}}" />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="s1" style="color: white;">A
+                                Button</label>
+                              <button class="btn btn-primary btn-sm form-control bdrs5" type="submit"
+                                style="max-height: 50px;color: white;">GET YOUR FREE
+                                CASH OFFER</button>
+                            </div>
+                          </form>
+                          <p
+                            style="text-transform: uppercase; font-size: 15px;font-family: monospace;padding: 0; padding-top: 10px;">
+                            UPON CLICKING SUBMIT * I CONSENT TO RECEIVE MARKETING TEXT MESSAGES FROM AMECO CORP AT THE
+                            NUMBER PROVIDED</p>
+                          <p
+                            style="text-transform: lowercase; font-size: 10px;font-family: 'Courier New', Courier, monospace; padding: 0;padding-top: 2px;">
+                            *Estimate of 4 messages a month. Message and data rates may apply. Reply STOP to opt out at
+                            any time. Read our Privacy Policy.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#explore-property">
+            <div class="mouse_scroll animate-up-4">
+              <img alt="" src="/static/images/home-scroll.png" />
+            </div>
+          </a>
+        </div>
+      </section>
+      <section class="pb90 pb30-md" id="explore-property">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="main-title wow fadeInUp" data-wow-delay="300ms">
+                <h3 class="title">SELL YOUR PROPERTY IN 3 EASY STEPS!</h3>
+                <p class="paragraph" style="font-size: 13px;">WE’VE HELPED THOUSANDS OF PEOPLE JUST LIKE YOU!</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div
+                class="explore-apartment-slider navi_pagi_top_right slider-3-grid owl-carousel owl-theme wow fadeInUp"
+                data-wow-delay="300ms">
+                <div class="item">
+                  <a href="#!!">
+                    <div class="iconbox-style1">
+                      <i class="fa-solid fa-calendar-days" style="font-size: 40px;"></i>
+                      <div class="iconbox-content">
+                        <h6 class="title">1. SCHEDULE A CALL</h6>
+                        <p class="text mb-0" style="font-size: 15px">We'll meet with you to go over current situation
+                          and help you find the solution that works best for you.</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#!!">
+                    <div class="iconbox-style1">
+                      <i class="fa-solid fa-file" style="font-size: 40px;"></i>
+                      <div class="iconbox-content">
+                        <h6 class="title">2. GET A FAIR OFFER</h6>
+                        <p class="text mb-0" style="font-size: 15px">If a sale is the best choice to help you meet your
+                          goals, we will provide you with a no-obligation cash offer.</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#!!">
+                    <div class="iconbox-style1">
+                      <i class="fa-solid fa-circle-dollar-to-slot" style="font-size: 40px;"></i>
+                      <div class="iconbox-content">
+                        <h6 class="title">3. GET PAID!</h6>
+                        <p class="text mb-0" style="font-size: 15px">If you accept our offer, we will pay you cash with
+                          a reputable, local title company.</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Explore Apartment -->
+      <section class="pt0 pb90 pb10-md">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 m-auto wow fadeInUp" data-wow-delay="300ms">
+              <div class="main-title text-center">
+                <h2 class="title">See how Ameco Homes can help</h2>
+                <p class="paragraph">WE WANT TO HELP!</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay="00ms">
+              <div class="iconbox-style2 text-center">
+                <div class="icon"><img alt="" src="https://images.unsplash.com/photo-1611858977757-8f7cdc084d3b"
+                    style="border-radius: 50%;width: 240px;height: 240px;max-width: 100%;" /></div>
+                <div class="iconbox-content">
+                  <h4 class="title">FOR ANY SITUATION</h4>
+                  <p class="text">
+                  <ul>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Foreclosure</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Financial Struggle</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Divorce</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Relocation</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Death in the Family</li>
+                  </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+              <div class="iconbox-style2 active text-center">
+                <div class="icon"><img alt="" src="https://images.unsplash.com/photo-1517405030045-45f7ad942106"
+                    style="border-radius: 50%;width: 240px;height: 240px;max-width: 100%;" /></div>
+                <div class="iconbox-content">
+                  <h4 class="title">IN ANY CONDITION </h4>
+                  <p class="text">
+                  <ul>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Vacant</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Unfinished Interiors</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> In Need of Major Repairs</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Structural Damage</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Hoarder Homes</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> In Need of Major Repairs</li>
+                  </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="300ms">
+              <div class="iconbox-style2 text-center">
+                <div class="icon"><img alt="" src="https://images.unsplash.com/photo-1677257869032-f323326e4f7f"
+                    style="border-radius: 50%;width: 240px;height: 240px;max-width: 100%;" /></div>
+                <div class="iconbox-content">
+                  <h4 class="title">WITH ANY ISSUES</h4>
+                  <p class="text">
+                  <ul>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Probate</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Low Equity</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Problem Tenants</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Late Payments</li>
+                    <li><i class="fa-regular fa-circle-check" style="color: green;"></i> Bad Tenants</li>
+                  </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Explore Apartment -->
+      <section class="bgc-f7">
+        <div class="container">
+          <div class="row align-items-center wow fadeInUp" data-wow-delay="00ms">
+            <div class="col-lg-9">
+              <div class="main-title2">
+                <h2 class="title">THE AMECO HOMES EDGE</h2>
+                <p class="paragraph">5 Reasons to choose us: </p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="text-start text-lg-end mb-3">
+                <a class="ud-btn2" href="">GET YOUR FREE CASH OFFER<i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 wow fadeInUp" data-wow-delay="300ms">
+              <div
+                class="feature-listing-slider navi_pagi_bottom_center slider-dib-sm slider-3-grid owl-carousel owl-theme">
+                <div class="item">
+                  <div class="listing-style1">
+                    <div class="list-thumb">
+                      <img src="https://cdn-icons-png.flaticon.com/512/4429/4429107.png " width="256" height="256"
+                        alt="" title="" class="img-small">
+                      <div class="list-tag fz12"><span class="flaticon-electricity me-2"></span>1. </div>
+                    </div>
+                    <div class="list-content">
+                      <h6 class="list-title"><a href="#!!">NO REPAIRS</a></h6>
+                      <hr class="mt-2 mb-2" />
+                      <div class="list-meta2 d-flex justify-content-between align-items-center">
+                        <span class="for-what">We will happily buy your property AS-IS, no need to spend money on
+                          repairs.<br><br>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="listing-style1">
+                    <div class="list-thumb">
+                      <img src="https://cdn-icons-png.flaticon.com/512/12309/12309467.png " width="256" height="256"
+                        alt="" title="" class="img-small">
+                      <div class="list-tag fz12"><span class="flaticon-electricity me-2"></span>2. </div>
+                    </div>
+                    <div class="list-content">
+                      <h6 class="list-title"><a href="#!!">WE DO THE WORK</a></h6>
+                      <hr class="mt-2 mb-2" />
+                      <div class="list-meta2 d-flex justify-content-between align-items-center">
+                        <span class="for-what">From paperwork to dealing with complex legal paperwork, we’ll handle the
+                          headaches so you don’t have to.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="listing-style1">
+                    <div class="list-thumb">
+                      <img src="https://cdn-icons-png.flaticon.com/512/6831/6831000.png" width="256" height="256" alt=""
+                        title="" class="img-small">
+                      <div class="list-tag fz12"><span class="flaticon-electricity me-2"></span>3. </div>
+                    </div>
+                    <div class="list-content">
+                      <h6 class="list-title"><a href="#!!">NO FEES
+                        </a></h6>
+                      <hr class="mt-2 mb-2" />
+                      <div class="list-meta2 d-flex justify-content-between align-items-center">
+                        <span class="for-what">No hidden fees, no commissions, no complications.<br><br>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="listing-style1">
+                    <div class="list-thumb">
+                      <img src="https://cdn-icons-png.flaticon.com/512/15888/15888500.png" width="256" height="256"
+                        alt="" title="" class="img-small">
+                      <div class="list-tag fz12"><span class="flaticon-electricity me-2"></span>4. </div>
+                    </div>
+                    <div class="list-content">
+                      <h6 class="list-title"><a href="#!!">CLOSE FAST
+                        </a></h6>
+                      <hr class="mt-2 mb-2" />
+                      <div class="list-meta2 d-flex justify-content-between align-items-center">
+                        <span class="for-what">Pick your timeline, close on your schedule, and get your cash: fast!
+                          <br><br>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="listing-style1">
+                    <div class="list-thumb">
+                      <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" width="256" height="256" alt=""
+                        title="" class="img-small">
+                      <div class="list-tag fz12"><span class="flaticon-electricity me-2"></span>5. </div>
+                    </div>
+                    <div class="list-content">
+                      <h6 class="list-title"><a href="#!!">LOCAL SERVICE
+                        </a></h6>
+                      <hr class="mt-2 mb-2" />
+                      <div class="list-meta2 d-flex justify-content-between align-items-center">
+                        <span class="for-what">We live in New Jersey and are familiar with our local towns and counties,
+                          so we know how to give New Jersey service.
+                          <br>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pb100 pb50-md bgc-thm-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="00ms">
+              <div class="main-title">
+                <h2 class="title">People Love Working with Us</h2>
+                <p class="paragraph">HERE’S WHAT OUR CLIENTS SAY</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="testimonial-slider navi_pagi_top_right slider-3-grid owl-carousel owl-theme wow fadeInUp"
+                data-wow-delay="300ms">
+                <div class="item">
+                  <div class="testimonial-style1 position-relative testimonial-card">
+                    <div class="testimonial-content">
+                      <h5 class="title">Great Work</h5>
+                      <span class="icon fas fa-quote-left"></span>
+                      <p class="text">“Working with Ameco Homes was an absolute game-changer in my home-buying journey.
+                        Their platform is incredibly user-friendly and intuitive, making it easy to filter through
+                        listings that met all my criteria. The personalized recommendations they provided were spot-on
+                        and saved me countless hours of searching. The team’s expertise and commitment to understanding
+                        my needs ensured I found the perfect home without any stress. I couldn’t be happier with the
+                        experience!”</p>
+                      <div class="testimonial-review">
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
+                      </div>
+                    </div>
+                    <div class="thumb d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <img alt="" class="wa" src="images/testimonials/testimonial-1.png" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-0">Leslie Alexander</h6>
+                        <p class="mb-0">Buyer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="testimonial-style1 position-relative testimonial-card">
+                    <div class="testimonial-content">
+                      <h5 class="title">Inspiring Work</h5>
+                      <span class="icon fas fa-quote-left"></span>
+                      <p class="text">“Ameco Homes made buying my first home an enjoyable and seamless process. From the
+                        initial consultation to closing, their brokers were professional, responsive, and genuinely
+                        supportive. Their detailed market insights helped me make an informed decision, and their
+                        negotiation skills got me a great deal. I highly recommend Ameco Homes to anyone looking for a
+                        dedicated and reliable partner in their home-buying journey.”</p>
+                      <div class="testimonial-review">
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <p class="mb-0">Buyer</p>
+                      </div>
+                    </div>
+                    <div class="thumb d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <img alt="" class="wa" src="images/testimonials/testimonial-2.png" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-0">David L</h6>
+                        <p class="mb-0">Buyer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="testimonial-style1 position-relative testimonial-card">
+                    <div class="testimonial-content">
+                      <h5 class="title">Excellent Tools</h5>
+                      <span class="icon fas fa-quote-left"></span>
+                      <p class="text">“Selling my home with Ameco Homes was a fantastic experience. Their platform
+                        provided excellent tools and resources that made listing my property straightforward and
+                        efficient. The team’s marketing strategies were top-notch, resulting in a quick sale at a price
+                        I was very pleased with. Their communication throughout the process was clear and timely, making
+                        the entire transaction smooth and hassle-free. I’ll definitely use Ameco Homes again in the
+                        future!”</p>
+                      <div class="testimonial-review">
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
+                      </div>
+                    </div>
+                    <div class="thumb d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <img alt="" class="wa" src="images/testimonials/testimonial-3.png" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-0">Sophia Jonathon</h6>
+                        <p class="mb-0">Seller</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="testimonial-style1 position-relative testimonial-card">
+                    <div class="testimonial-content">
+                      <h5 class="title">Simply Superior</h5>
+                      <span class="icon fas fa-quote-left"></span>
+                      <p class="text">“I was thoroughly impressed with Ameco Homes when I sold my property. Their
+                        approach to pricing, marketing, and negotiating was outstanding. The detailed market analysis
+                        they provided gave me confidence in setting the right price, and their proactive communication
+                        ensured I was always in the loop. Thanks to their expertise, I sold my home faster than I
+                        anticipated and for a great price. I highly recommend their services to any home seller.”</p>
+                      <div class="testimonial-review">
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
+                      </div>
+                    </div>
+                    <div class="thumb d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <img alt="" class="wa" src="images/testimonials/testimonial-3.png" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-0">Rachel Bella</h6>
+                        <p class="mb-0">Seller</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="testimonial-style1 position-relative testimonial-card">
+                    <div class="testimonial-content">
+                      <h5 class="title">Effortless Excellence
+                      </h5>
+                      <span class="icon fas fa-quote-left"></span>
+                      <p class="text">“Ameco Homes exceeded my expectations in every way. Whether you're buying or
+                        selling, their platform offers an exceptional blend of technology and personal service. As a
+                        buyer, I appreciated their tailored property suggestions and the insightful guidance from their
+                        team. When it was time to sell, their strategic marketing and expert advice led to a quick and
+                        profitable sale. Their professionalism and dedication make them a standout choice in real
+                        estate. I wouldn’t hesitate to recommend Ameco Homes to anyone looking to navigate the real
+                        estate market with confidence and ease.”</p>
+                      <div class="testimonial-review">
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a class="me-1" href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
+                      </div>
+                    </div>
+                    <div class="thumb d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <img alt="" class="wa" src="images/testimonials/testimonial-3.png" />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h6 class="mb-0">Dianne Russell</h6>
+                        <p class="mb-0">Buyer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pt100 pb40-md">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-xl-4">
+              <div class="about-box-1 pe-4 mt100 mt0-lg mb30-lg wow fadeInRight" data-wow-delay="300ms">
+                <h2 class="title mb30">READY TO START?</h2>
+                <!-- <p class="text mb25 fz15">As the complexity of buildings to increase, the field of architecture</p>
+                <div class="list-style1 mb50">
+                  <ul>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Find excellent deals</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Friendly host &amp; Fast support</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>List your own property</li>
+                  </ul>
+                </div> -->
+                <a class="ud-btn btn-white2" href="/fill_more">Get Your Cash Offer<i class="fas fa-arrow-right"></i></a>
+                <p class="text mb25 fz15">Or call us at +1 (470) 827-2901</p>
+
+              </div>
+            </div>
+            <div class="col-lg-9 col-xl-8 col-xxl-7 offset-xxl-1">
+              <div class="position-relative mb35 mb0-sm wow fadeInLeft" data-wow-delay="300ms">
+                <div class="img-box-1 list-inline-item me-0">
+                  <img alt="" class="img-1" src="/static/images/about-1.jpg" />
+                </div>
+                <div class="img-box-2 list-inline-item me-0">
+                  <img alt="" class="img-1" src="/static/images/about-2.jpg" />
+                </div>
+                <div class="img-box-3">
+                  <img alt="" class="img-1 bounce-y" src="/static/images/about-1.png" />
+                </div>
+                <div class="img-box-4">
+                  <img alt="" class="img-1 spin-right" src="/static/images/element-1.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="our-partners pt0">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 wow fadeInUp">
+              <div class="main-title text-center">
+                <h6>Trusted by the world’s best</h6>
+              </div>
+            </div>
+            <div class="col-lg-12 wow fadeInRight">
+              <div class="dots_none nav_none slider-dib-sm slider-4-grid owl-carousel owl-theme wow fadeInUp"
+                data-wow-delay="300ms">
+                <div class="item">
+                  <div class="partner_item"><img alt="1.png" class="wa m-auto" src="/static/images/bba.png"
+                      style="width: 100px;height: 100px;" /></div>
+                </div>
+                <div class="item">
+                  <div class="partner_item"><img alt="2.png" class="wa m-auto" src="/static/images/inc5000.jpg"
+                      style="width: 90px;height: 90px;" /></div>
+                </div>
+                <div class="item">
+                  <div class="partner_item"><img alt="3.png" class="wa m-auto" src="/static/images/google.jpeg"
+                      style="width: 100px;height: 100px;" /></div>
+                </div>
+                <div class="item">
+                  <div class="partner_item"><img alt="4.png" class="wa m-auto" src="/static/images/trust.png"
+                      style="width: 100px;height: 100px;" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Our CTA -->
+      <section class="footer-style1 pt60 pb-0">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5">
+              <div class="footer-widget mb-4 mb-lg-5">
+                <a class="footer-logo" href="/"><img alt="" class="mb40" src="images/header-logo.svg" /></a>
+                <div class="row mb-4 mb-lg-5">
+                  <div class="col-auto">
+                    <div class="contact-info">
+                      <p class="info-title">Give Us a Call @</p>
+
+                      <h6 class="info-phone"><a href="tel:+14708272901"> +1 (470) 827-2901</a></h6>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="contact-info">
+                      <p class="info-title">Business Mail</p>
+                      <h6 class="info-mail"><a href="mailto:hello@amecohomes.com">hello@amecohomes.com</a></h6>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="app-widget">
+                  <h5 class="title text-white mb10">Bought You By</h5>
+                  <div class="row mb-12 mb-lg-12">
+                    <div class="col-lg-12">
+                      <a href="">
+                        <div class="app-info d-flex align-items-center mb-12">
+                          <div class="flex-shrink-1">
+                            <img src="/static/images/logo.png" width="90" height="90" alt="" title="" class="img-small">
+                          </div>
+                          <div class="flex-grow-5 ml20 col-lg-6">
+                            <h6 class="app-title text-white fz14">Ameco Corp</h6>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="social-widget">
+                  <h6 class="text-white mb20" style="text-transform: uppercase;">A Division of</h6>
+                  <div class="social-style1">
+                    <!-- <a href=""><img src="/static/images/logo.png" width="90" height="90" alt="" title="" class="img-small"></a> -->
+                    <!-- # h2 -->
+                    <a href="">
+                      <h2 style="color: white;" class="mt0-lg">Ameco Corp</h2>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="footer-widget mb-4 mb-lg-5">
+                <div class="mailchimp-widget mb-4 mb-lg-5">
+                  <h6 class="title text-white mb20">News Letter</h6>
+                  <div class="mailchimp-style1">
+                    <input class="form-control" placeholder="Your Email" type="email" />
+                    <button type="submit">Subscribe</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container white-bdrt1 py-4">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="text-center text-lg-start">
+                <p class="copyright-text text-gray ff-heading">© 2024 AMECO HOMES LLC - All rights reserved</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="text-center text-lg-end">
+                <p class="footer-menu ff-heading text-gray"><a class="text-gray" href="#">Privacy</a> · <a
+                    class="text-gray" href="#">Terms</a> · <a class="text-gray" href="#">Sitemap</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <a class="scrollToHome" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </div>
+  <!-- Wrapper End -->
+  <script src="/static/jquery-3.6.4.min.js"></script>
+  <script src="/static/jquery-migrate-3.0.0.min.js"></script>
+  <script src="/static/popper.min.js"></script>
+  <script src="/static/bootstrap.min.js"></script>
+  <script src="/static/bootstrap-select.min.js"></script>
+  <script src="/static/jquery.mmenu.all.js"></script>
+  <script src="/static/ace-responsive-menu.js"></script>
+  <script src="/static/jquery-scrolltofixed-min.js"></script>
+  <script src="/static/wow.min.js"></script>
+  <script src="/static/owl.js"></script>
+  <script src="/static/parallax.js"></script>
+  <script src="/static/pricing-slider.js"></script>
+  <!-- Custom script for all pages -->
+  <script src="/static/script.js"></script>
+  <script
+    type="text/javascript">window.$crisp = []; window.CRISP_WEBSITE_ID = "ea02a6e9-3988-45f3-8949-7f0f854ba51a"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
+</body>
+
+</html>

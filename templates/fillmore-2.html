@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        content="advanced search, agency, agent, classified, directory, house, listing, property, real estate, real estate agency, real estate agent, realestate, realtor, rental"
+        name="keywords" />
+    <meta content="Ameco Homes LLC" name="description" />
+    <meta content="Ameco Homes" name="springreen" />
+    <title>Sell Your Property! - Ameco Homes </title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon//favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon//site.webmanifest">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#107bc7">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#cd1414">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon//favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon//site.webmanifest">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#107bc7">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#cd1414">
+    <script src="/static/assets/js/config.js"></script>
+    <script src="/static/vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+    <link href="/static/vendors/choices/choices.min.css" rel="stylesheet">
+    <link href="/static/vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
+    <link href="/static/vendors/dropzone/dropzone.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
+        rel="stylesheet">
+    <link href="/static/vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="/static/assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="/static/assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="/static/assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+    <link href="/static/assets/css/user.min.css" rel="stylesheet" id="user-style-default">
+    <script>
+        var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+        if (isRTL) {
+            var linkDefault = document.getElementById('style-default');
+            var userLinkDefault = document.getElementById('user-style-default');
+            linkDefault.setAttribute('disabled', true);
+            userLinkDefault.setAttribute('disabled', true);
+            document.querySelector('html').setAttribute('dir', 'rtl');
+        } else {
+            var linkRTL = document.getElementById('style-rtl');
+            var userLinkRTL = document.getElementById('user-style-rtl');
+            linkRTL.setAttribute('disabled', true);
+            userLinkRTL.setAttribute('disabled', true);
+        }
+    </script>
+    <style>
+        .center-img {
+            text-align: center;
+        }
+
+        .center-img img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<div class="row justify-content-center pt-6">
+    <div class="col-sm-10 col-lg-7 col-xxl-5"><a class="d-flex flex-center mb-4" href="/static/index.html"><img
+                class="me-2" src="/static/images/logo.png" alt="" width="45" /><span
+                class="font-sans-serif fw-bolder fs-4 d-inline-block">Ameco Homes</span></a>
+        {% if error %}
+        <div class="card card-lg mb-5">
+            <div class="card-body text-center py-5">
+                <div class="mb-2">
+                    <div class="display-4 text-danger fs-4 mb-3">Error Occured While Proccessing</div>
+                    <p class="text-800 mb-4">{{error}}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if step_1 %}
+        <div class="card theme-wizard mb-5" id="wizard">
+            <div class="card-header bg-light pt-3 pb-2">
+                <ul class="nav justify-content-between nav-wizard">
+                    <li class="nav-item"><a class="nav-link active fw-semi-bold" data-bs-toggle="tab"
+                            data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                    class="nav-item-circle"><span class="fas fa-lock"></span></span></span><span
+                                class="d-none d-md-block mt-1 fs--1">Account</span></a></li>
+                    <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                            data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                    class="nav-item-circle"><span class="fas fa-user"></span></span></span><span
+                                class="d-none d-md-block mt-1 fs--1">Personal</span></a></li>
+                    <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                            data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                    class="nav-item-circle"><span class="fas fa-dollar-sign"></span></span></span><span
+                                class="d-none d-md-block mt-1 fs--1">The Basics</span></a></li>
+                    <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                            data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                    class="nav-item-circle"><span class="fas fa-thumbs-up"></span></span></span><span
+                                class="d-none d-md-block mt-1 fs--1">Done</span></a></li>
+                </ul>
+            </div>
+            <div class="card-body py-4" id="wizard-controller">
+                <div class="tab-content">
+                    <div class="tab-pane active px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-tab1"
+                        id="bootstrap-wizard-tab1">
+                        <form method="post" action="/form/submit/1">
+                            <div class="mb-3">
+                                <img src="https://markspain.com/app/uploads/2024/02/GO-Form-Landing.png">
+                            </div>
+                            <div class="mb-3">
+                                <h3>Get the strongest <span class="text-primary">cash offer</span> on your home</h3>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="bootstrap-wizard-wizard-address">Home Address*</label>
+                                <input class="form-control" type="text" name="addy"
+                                    placeholder="Enter your home address" required="required"
+                                    id="bootstrap-wizard-wizard-address" data-wizard-validate-inputEmail />
+                                <div class="invalid-feedback">Please enter your Address</div>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="cons" required="required"
+                                    checked="checked" id="bootstrap-wizard-wizard-checkbox" />
+                                <label class="form-check-label" for="bootstrap-wizard-wizard-checkbox">I accept the <a
+                                        href="#!">terms
+                                    </a>and <a href="#!">privacy policy</a></label>
+                            </div>
+                            <div class="d-grid">
+                                <p>Skip the showings, open houses, and all of the stress. Get a Guaranteed Offer on your
+                                    home today.</p>
+                                <button class="btn btn-primary px-5 px-sm-6" type="submit" id="next-step-1">Next<span
+                                        class="fas fa-chevron-right ms-2" data-fa-transform="shrink-3"> </span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% elif step_2 %}
+            <div class="card theme-wizard mb-5" id="wizard">
+                <div class="card-header bg-light pt-3 pb-2">
+                    <ul class="nav justify-content-between nav-wizard">
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span class="fas fa-lock"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">Account</span></a></li>
+                        <li class="nav-item"><a class="nav-link active fw-semi-bold" data-bs-toggle="tab" 
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span class="fas fa-user"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">Personal</span></a></li>
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span
+                                            class="fas fa-dollar-sign"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">The Basics</span></a></li>
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span
+                                            class="fas fa-thumbs-up"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">Done</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body py-4" id="wizard-controller">
+                    <div class="tab-content">
+                        <div class="tab-pane active px-sm-3 px-md-5" role="tabpanel"
+                            aria-labelledby="bootstrap-wizard-tab2" id="bootstrap-wizard-tab2">
+                            <form method="post" action="/form/submit/2">
+                                <div class="mb-3">
+                                    <h3>How Should We Get In Touch*</h3>
+                                    <p id="fs--1 text-500">{{addy}}</p>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="name-input">Name</label>
+                                        <input class="form-control" type="text" name="fullname"
+                                            placeholder="First & Last Name" data-bs-toggle="tooltip"
+                                            data-bs-placement="top"
+                                            title="Please enter your full name (first and last name)" id="name-input" />
+                                        <div class="invalid-feedback">Please enter your full name (first and last name).
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="bootstrap-wizard-wizard-datepicker">Email</label>
+                                    <input class="form-control" type="email" name="email" placeholder="Enter your email"
+                                        required="required" id="bootstrap-wizard-wizard-datepicker"
+                                        data-wizard-validate-inputEmail />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="bootstrap-wizard-wizard-address">Phone Number</label>
+                                    <input class="form-control" type="number" name="phone"
+                                        placeholder="Enter your phone number" required="required"/>
+                                </div>
+                                <div class="mb-3">
+                                    <button class="btn btn-primary px-5 px-sm-6" type="submit"
+                                        id="next-step-2">Next<span class="fas fa-chevron-right ms-2"
+                                            data-fa-transform="shrink-3"> </span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% elif step_3 %}
+            <div class="card theme-wizard mb-5" id="wizard">
+                <div class="card-header bg-light pt-3 pb-2">
+                    <ul class="nav justify-content-between nav-wizard">
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span class="fas fa-lock"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">Account</span></a></li>
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span class="fas fa-user"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">Personal</span></a></li>
+                        <li class="nav-item"><a class="nav-link active fw-semi-bold" data-bs-toggle="tab" 
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span
+                                            class="fas fa-dollar-sign"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">The Basics</span></a></li>
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span
+                                            class="fas fa-thumbs-up"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">Done</span></a></li>
+                    </ul>
+                </div>
+                <div class="tab-pane active px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-tab3"
+                    id="bootstrap-wizard-tab3">
+                    <form method="post" action="/form/submit/3">
+                        <div class="mb-3 center-img">
+                            <img src="https://markspain.com/app/uploads/2024/02/home-listed.png" alt="Descriptive Text">
+                        </div>
+                        <div class="mb-3">
+                            <div class="col">
+                                <h3>More About Your Property</h3>
+                                <p id="fs-2 text-500">{{addy}}</p>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="bootstrap-wizard-card-holder-country">Is your
+                                        property already listed
+                                        ?</label>
+                                    <select class="form-select" name="prop_alrdy_listed"
+                                        id="bootstrap-wizard-card-holder-country">
+                                        <option value="None">Select your Choice ...</option>
+                                        <option value="True">Yes</option>
+                                        <option value="False">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="bxsjkjs">Describe about your property</label>
+                                    <textarea class="form-control" name="desc" id="bxsjkjs" rows="3">{{desc}}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label" for="bootstrap-wizard-card-holder-owner">Are you the
+                                        property owner
+                                        ?</label>
+                                    <select class="form-select" name="property_owner"
+                                        id="bootstrap-wizard-card-holder-owner" required>
+                                        <option value="None">Select your Choice ...</option>
+                                        <option value="True">Yes</option>
+                                        <option value="False">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label" for="bootstrap-wizard-card-holder-owner">When are you
+                                        looking to sell
+                                        ?</label>
+                                    <select class="form-select" name="wehn_sell"
+                                        id="bootstrap-wizard-card-holder-owner">
+                                        <option value="Not Answered">Select your Choice ...</option>
+                                        <option value="Immediately">Immediately</option>
+                                        <option value="In_3months">Less than 3 months</option>
+                                        <option value="In_6months">Less than 6 months</option>
+                                        <option value="In_12months">Less than 12 months</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="bootstrap-wizard-card-holder-buyer">Are you looking
+                                        to buy ?</label>
+                                    <select class="form-select" name="looking_to_buy"
+                                        id="bootstrap-wizard-card-holder-buyer">
+                                        <option value="None">Select your Choice ...</option>
+                                        <option value="True">Yes</option>
+                                        <option value="False">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <button class="btn btn-primary px-5 px-sm-6" type="submit" id="next-step-3">Next<span
+                                        class="fas fa-chevron-right ms-2" data-fa-transform="shrink-3"> </span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% elif step_4 %}
+            <div class="card theme-wizard mb-5" id="wizard">
+                <div class="card-header bg-light pt-3 pb-2">
+                    <ul class="nav justify-content-between nav-wizard">
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span class="fas fa-lock"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">Account</span></a></li>
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span class="fas fa-user"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">Personal</span></a></li>
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" data-bs-toggle="tab" disabled
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span
+                                            class="fas fa-dollar-sign"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">The Basics</span></a></li>
+                        <li class="nav-item"><a class="nav-link active fw-semi-bold" data-bs-toggle="tab" 
+                                data-wizard-step="data-wizard-step"><span class="nav-item-circle-parent"><span
+                                        class="nav-item-circle"><span
+                                            class="fas fa-thumbs-up"></span></span></span><span
+                                    class="d-none d-md-block mt-1 fs--1">Done</span></a></li>
+                    </ul>
+                </div>
+                <div class="card-body py-4" id="wizard-controller">
+                    <div class="tab-pane active text-center px-sm-3 px-md-5" role="tabpanel"
+                        aria-labelledby="bootstrap-wizard-tab4" id="bootstrap-wizard-tab4">
+                        <div class="wizard-lottie-wrapper">
+                            <div class="lottie wizard-lottie mx-auto my-3"
+                                data-options='{"path":"/static/assets/img/animated-icons/celebration.json"}'></div>
+                        </div>
+
+                        <h4 class="mb-1">Congratulations! You're one step closer to selling your home!</h4>
+                        <p>We will reach out shortly to discuss next steps. The #1 Real Estate Team, Over 10,000
+                            customers agree!
+                            Read our 5-star reviews.</p><a class="btn btn-primary px-5 my-3"
+                            href="/">Take me home</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    </main>
+
+    <script src="/static/vendors/popper/popper.min.js"></script>
+    <script src="/static/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="/static/vendors/anchorjs/anchor.min.js"></script>
+    <script src="/static/vendors/is/is.min.js"></script>
+    <script src="/static/vendors/flatpickr/flatpickr.min.js"></script>
+    <script src="/static/vendors/choices/choices.min.js"></script>
+    <script src="/static/vendors/dropzone/dropzone.min.js"></script>
+    <script src="/static/vendors/lottie/lottie.min.js"></script>
+    <script src="/static/vendors/validator/validator.min.js"></script>
+    <script src="/static/vendors/fontawesome/all.min.js"></script>
+    <script src="/static/vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="/static/vendors/list.js/list.min.js"></script>
+    <script src="/static/assets/js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6o5PHUD3Zfht1coaPCl9PIYYS1gbsWgU&loading=async&libraries=places&callback=initMap"></script>
+    <script>
+        function initMap() {
+            var input = document.getElementById('bootstrap-wizard-wizard-address');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+        window.addEventListener('load', function () {
+            initMap();
+        });
+    </script>
+    <script
+    type="text/javascript">window.$crisp = []; window.CRISP_WEBSITE_ID = "ea02a6e9-3988-45f3-8949-7f0f854ba51a"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
+
+
+    </body>
+
+</html>

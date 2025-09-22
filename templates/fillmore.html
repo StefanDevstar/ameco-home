@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords"
+    content="advanced search, agency, agent, classified, directory, house, listing, property, real estate, real estate agency, real estate agent, realestate, realtor, rental">
+  <meta name="description" content="Ameco Homes LLC">
+  <meta name="springreen" content="Ameco Homes">
+  <title>Sell Your Property! - Ameco Homes</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/static/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#107bc7">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#cd1414">
+  <link href="/static/vendors/choices/choices.min.css" rel="stylesheet">
+  <link href="/static/vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
+  <link href="/static/vendors/dropzone/dropzone.min.css" rel="stylesheet">
+  <link href="/static/vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+  <link href="/static/assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+  <link href="/static/assets/css/theme.min.css" rel="stylesheet" id="style-default">
+  <link href="/static/assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+  <link href="/static/assets/css/user.min.css" rel="stylesheet" id="user-style-default">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    .center-img {
+      text-align: center;
+    }
+
+    .center-img img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row justify-content-center pt-6">
+    <div class="col-sm-10 col-lg-7 col-xxl-5">
+      <a class="d-flex flex-center mb-4" href="/static/index.html">
+        <img class="me-2" src="/static/images/logo-sq.png" alt="Ameco Homes" width="45" />
+        <span class="font-sans-serif fw-bolder fs-4 d-inline-block">Ameco Homes</span>
+      </a>
+      {% if step %}
+      <div class="card theme-wizard mb-5" id="wizard">
+        <div class="card-header bg-light pt-3 pb-2">
+          <ul class="nav justify-content-between nav-wizard">
+            <ul class="nav justify-content-between nav-wizard">
+              {% for step_item in steps %}
+              <li class="nav-item">
+                  <a class="nav-link {% if loop.index == current_step %}active fw-semi-bold{% else %}fw-semi-bold{% endif %}"
+                     data-bs-toggle="tab" data-wizard-step="{{ step_ids[loop.index] }}">
+                      <span class="nav-item-circle-parent">
+                          <span class="nav-item-circle">
+                              Hi
+                          </span>
+                      </span>
+                      <span class="d-none d-md-block mt-1 fs--1">{{ step_item }}</span>
+                  </a>
+              </li>
+              {% endfor %}
+          </ul>          
+        </div>
+        <div class="card-body py-4" id="wizard-controller">
+          <div class="tab-content">
+            <div class="tab-pane active px-sm-3 px-md-5" role="tabpanel" aria-labelledby="{{ step_ids[current_step] }}">
+              <form class="needs-validation" novalidate="novalidate" id="form-step-{{ current_step }}">
+                {% if current_step == 1 %}
+                <div class="mb-3">
+                </div>
+                <div class="mb-3">
+                  <h3>Get the strongest <span class="text-primary">cash offer</span> on your home</h3>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="bootstrap-wizard-wizard-address">Home Address*</label>
+                  <input class="form-control" type="text" name="addy" placeholder="Enter your home address"
+                    required="required" id="bootstrap-wizard-wizard-address" data-wizard-validate-inputEmail />
+                  <div class="invalid-feedback">Please enter your Address</div>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="cons" required="required" checked="checked"
+                    id="bootstrap-wizard-wizard-checkbox" />
+                  <label class="form-check-label" for="bootstrap-wizard-wizard-checkbox">I accept the
+                    <a href="#!">terms</a> and <a href="#!">privacy policy</a></label>
+                </div>
+                <div class="d-grid">
+                  <p>Skip the showings, open houses, and all of the stress. Get a Guaranteed Offer
+                    on your home today.</p>
+                  <button class="btn btn-primary px-5 px-sm-6" type="button" id="next-step-{{ current_step }}">Next
+                    <span class="fas fa-chevron-right ms-2" data-fa-transform="shrink-3"></span>
+                  </button>
+                </div>
+                {% endif %}
+                {% if current_step == 2 %}
+                <div class="mb-3">
+                  <h3>How Should We Get In Touch*</h3>
+                  <p id="lol-op"></p>
+                  <div class="mb-3">
+                    <label class="form-label" for="name-input">Name</label>
+                    <input class="form-control" type="text" name="fullname" placeholder="First & Last Name"
+                      data-bs-toggle="tooltip" data-bs-placement="top"
+                      title="Please enter your full name (first and last name)" id="name-input" />
+                    <div class="invalid-feedback">Please enter your full name (first and last name).</div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="bootstrap-wizard-wizard-datepicker">Email</label>
+                    <input class="form-control" type="email" name="email" placeholder="Enter your email"
+                      required="required" id="bootstrap-wizard-wizard-datepicker" data-wizard-validate-inputEmail />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="bootstrap-wizard-wizard-address">Phone Number</label>
+                    <input class="form-control" type="number" name="phone" placeholder="Enter your phone number"
+                      required="required" id="bootstrap-wizard-wizard-address" data-wizard-validate-inputEmail />
+                  </div>
+                  <div class="mb-3">
+                    <button class="btn btn-primary px-5 px-sm-6" type="button" id="next-step-{{ current_step }}">Next
+                      <span class="fas fa-chevron-right ms-2" data-fa-transform="shrink-3"></span>
+                    </button>
+                  </div>
+                </div>
+                {% endif %}
+                {% if current_step == 3 %}
+                <div class="mb-3 center-img">
+                  <img src="{{ img_urls[current_step] }}" alt="Descriptive Text">
+                </div>
+                <div class="mb-3">
+                  <div class="col">
+                    <h3>More About Your Property</h3>
+                  </div>
+                </div>
+                <div class="row g-2">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label class="form-label" for="bootstrap-wizard-card-holder-country">Is your property already
+                        listed?</label>
+                      <select class="form-select" name="prop_alrdy_listed" id="bootstrap-wizard-card-holder-country">
+                        <option value="None">Select your Choice ...</option>
+                        <option value="True">NO</option>
+                        <option value="False">YES</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="phone_input">Name</label>
+                    <input class="form-control" type="text" name="property_owner" placeholder="Enter the phone number"
+                      data-bs-toggle="tooltip" data-bs-placement="top"
+                      title="Please enter your full name (first and last name)" id="phone_input" />
+                    <div class="invalid-feedback">Enter your full name (first and last name).</div>
+                  </div>
+                </div>
+                <div class="row g-2">
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label class="form-label" for="seller-property-location">Are you looking to buy?</label>
+                      <input class="form-control" type="date" name="wehn_sell" placeholder="Enter a new date of entry"
+                        id="seller-property-location" />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label class="form-label" for="seller-property-price">When do you want to move in?</label>
+                      <input class="form-control" type="date" name="looking_to_buy"
+                        placeholder="Is there a price range?" id="seller-property-price" />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <button class="btn btn-primary px-5 px-sm-6" type="button" id="next-step-{{ current_step }}">Next
+                      <span class="fas fa-chevron-right ms-2" data-fa-transform="shrink-3"></span>
+                    </button>
+                  </div>
+                </div>
+                {% endif %}
+                {% if current_step == 4 %}
+                <div class="mb-3">
+                  <h3>Congratulations! You're one step closer to selling your home!</h3>
+                  <p>Your link: <a href="{{ step_urls[current_step] }}">here</a></p>
+                  <p>The last time you successfully unlocked this request</p>
+                </div>
+                <div class="mb-3 center-img">
+                  <img src="{{ img_urls[current_step] }}" alt="Congratulations!">
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary px-5 px-sm-6" type="button" id="next-step-{{ current_step }}">Take
+                    me home
+                    <span class="fas fa-chevron-right ms-2" data-fa-transform="shrink-3"></span>
+                  </button>
+                </div>
+                {% endif %}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <script src="/static/vendors/jquery/jquery.min.js"></script>
+  <script src="/static/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendors/choices/choices.min.js"></script>
+  <script src="/static/vendors/flatpickr/flatpickr.min.js"></script>
+  <script src="/static/vendors/dropzone/dropzone.min.js"></script>
+  <script src="/static/vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+  <script src="/static/assets/js/theme.min.js"></script>
+  <script
+    type="text/javascript">window.$crisp = []; window.CRISP_WEBSITE_ID = "ea02a6e9-3988-45f3-8949-7f0f854ba51a"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
+</body>
+
+</html>

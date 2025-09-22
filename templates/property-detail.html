@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ameco Capital - Property: {{property.title}}</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon//favicon-16x16.png">
+  <link rel="manifest" href="/static/favicon//site.webmanifest">
+  <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#107bc7">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#cd1414">
+  <script src="/static/assets/js/config.js"></script>
+  <script src="/static/vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
+    rel="stylesheet">
+  <link href="/static/vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+  <link href="/static/assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+  <link href="/static/assets/css/theme.min.css" rel="stylesheet" id="style-default">
+  <link href="/static/assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+  <link href="/static/vendors/glightbox/glightbox.min.css" rel="stylesheet" />
+  <link href="/static/assets/css/user.min.css" rel="stylesheet" id="user-style-default">
+  <style>
+    .map-container {
+      position: relative;
+      height: 0;
+      padding-bottom: 56.25%;
+      /* 16:9 aspect ratio */
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <script>
+    var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+    if (isRTL) {
+      var linkDefault = document.getElementById('style-default');
+      var userLinkDefault = document.getElementById('user-style-default');
+      linkDefault.setAttribute('disabled', true);
+      userLinkDefault.setAttribute('disabled', true);
+      document.querySelector('html').setAttribute('dir', 'rtl');
+    } else {
+      var linkRTL = document.getElementById('style-rtl');
+      var userLinkRTL = document.getElementById('user-style-rtl');
+      linkRTL.setAttribute('disabled', true);
+      userLinkRTL.setAttribute('disabled', true);
+    }
+  </script>
+</head>
+
+
+<body style="user-select: none; -webkit-user-select: none; -moz-user-select: none;  -ms-user-select: none; ">
+  <main class="main" id="top">
+    <div class="container" data-layout="container">
+      <script>
+        var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+        if (isFluid) {
+          var container = document.querySelector('[data-layout]');
+          container.classList.remove('container');
+          container.classList.add('container-fluid');
+        }
+      </script>
+      <div class="content">
+        <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand">
+          <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse"
+            aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span
+                class="toggle-line"></span></span></button>
+          <a class="navbar-brand me-1 me-sm-3" href="/">
+            <div class="d-flex align-items-center"><img class="me-2" src="/static/images/logo-sq.png" alt="Ameco Homes"
+                width="40" /><span class="font-sans-serif">Ameco Homes</span>
+            </div>
+          </a>
+          <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
+            <li class="nav-item">
+              <div class="theme-control-toggle fa-icon-wait px-2">
+                <input class="form-check-input ms-0 theme-control-toggle-input" id="themeControlToggle" type="checkbox"
+                  data-theme-control="theme" value="dark" />
+                <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle"
+                  data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to light theme"><span
+                    class="fas fa-sun fs-0"></span></label>
+                <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle"
+                  data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to dark theme"><span
+                    class="fas fa-moon fs-0"></span></label>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row justify-content-between align-items-center">
+              <div class="col">
+                <div class="d-flex">
+                  <div class="flex-1 fs--1">
+                    <h5 class="fs-0"><a href="/"><span class="fas fa-arrow-left me-1"></span>Back to properties list</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if not property %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h2>Property not found</h2>
+            <p>The property you are looking for does not exist or has been removed.</p>
+          </div>
+        </div>
+        {% endif %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row justify-content-between align-items-center">
+              <div class="col">
+                <div class="d-flex">
+                  <div class="flex-1 fs--1">
+                    <h2>{{ property.title }}</h2>
+                    <p class="mb-0 fs-1">by <a href="/">Ameco Homes</a></p>
+                    <span class="fs-0 text-warning fw-semi-bold">${{ property.price }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-auto mt-4 mt-md-0">
+                <button class="btn btn-falcon-default btn-sm me-2" id="shareButton" onclick="ShowShareDialog()">
+                  <span class="fas fa-share-alt me-1"></span>Share
+                </button>
+                <a class="btn btn-falcon-primary btn-sm px-4 px-sm-5" href="tel:+14708272901">Enquire</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                {% for i in range(property.images|length) %}
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ i }}"
+                  class="{% if i == 0 %}active{% endif %}" aria-current="{% if i == 0 %}true{% endif %}"
+                  aria-label="Slide {{ i + 1 }}"></button>
+                {% endfor %}
+              </div>
+              <div class="carousel-inner rounded-1 light">
+                {% for image in property.images %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                  <img class="d-block w-100" src="/{{ image }}" alt="Slide {{ loop.index }}" />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5 class="text-white">{{ property.title }}</h5>
+                    <p>By Ameco Homes</p>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-0">
+          <div class="col-lg-8 pe-lg-2">
+            <div class="card mb-3 mb-lg-0">
+              <div class="card-body">
+                <h3 class="mb-3">{{ property.title }}</h3>
+                <p>{{ property.summary }}</p>
+                <h5 class="fs-0 mt-5 mb-2">Location</h5>
+                <a class="badge border link-secondary me-1 text-decoration-none" href="#!">{{ property.map_data }}</a>
+                <h5 class="fs-0 mt-5 mb-3">Share with friends</h5>
+                <div class="icon-group">
+                  <a class="icon-item fs-2 text-success"
+                    href="sms:?body=Hey! Check out this property I found: {{ url_for('property', property_id=property.PropertyID) }}. It looks really promising!">
+                    <span class="fas fa-sms"></span>
+                  </a>
+                  <a class="icon-item fs-2 text-success"
+                    href="whatsapp://send?text=Hey! Check out this property I found: {{ url_for('property', property_id=property.PropertyID) }}. It looks really promising!">
+                    <span class="fab fa-whatsapp"></span>
+                  </a>
+                  <a class="icon-item fs-2 text-twitter"
+                    href="https://twitter.com/intent/tweet?text=Hey! Check out this property I found: {{ url_for('property', property_id=property.PropertyID) }}. It looks really promising!"
+                    target="_blank">
+                    <span class="fab fa-twitter"></span>
+                  </a>
+                  <a class="icon-item fs-2 text-facebook"
+                    href="https://www.facebook.com/sharer/sharer.php?u={{ url_for('property', property_id=property.PropertyID) }}"
+                    target="_blank">
+                    <span class="fab fa-facebook"></span>
+                  </a>
+                  <a class="icon-item fs-2 text-linkedin"
+                    href="https://www.linkedin.com/shareArticle?mini=true&url={{ url_for('property', property_id=property.PropertyID) }}&title=Hey! Check out this property I found: {{ url_for('property', property_id=property.PropertyID) }}. It looks really promising!"
+                    target="_blank">
+                    <span class="fab fa-linkedin"></span>
+                  </a>
+                </div>
+                <hr class="dashed">
+                <div class="col-12 mt-3">
+                  <div class="map-container rounded-3">
+                    <iframe src="https://www.google.com/maps?q={{ property.map_data }}&output=embed" style="border:0;"
+                      allowfullscreen="" loading="lazy"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 ps-lg-2">
+            <div class="sticky-sidebar">
+              <div class="card mb-3 fs--1">
+                <div class="card-body">
+                  <h3><strong>Property Data</strong></h3>
+                  <p class="mb-1">
+                    <span class="mb-2 fs-1"><i class="me-1 text-success fas fa-ruler-combined icon"></i><strong>Sq.
+                        Footage:</strong> {{ property.data[0] }}<br></span>
+                    <span class="mb-2 fs-1"><i class="me-1 text-success fas fa-home icon"></i><strong>Type:</strong> {{
+                      property.data[1] }}<br></span>
+                    <span class="mb-2 fs-1"><i class="me-1 text-success fas fa-car icon"></i><strong>Parking:</strong>
+                      {{ property.data[2] }}<br></span>
+                    <span class="mb-2 fs-1"><i class="me-1 text-success fas fa-calendar-alt icon"></i><strong>Year
+                        built:</strong> {{ property.data[3] }}<br></span>
+                    <span class="mb-2 fs-1"><i class="me-1 text-success fas fa-ruler icon"></i><strong>Lot
+                        size:</strong> {{ property.data[4] }}<br></span>
+                    <span class="mb-2 fs-1"><i class="me-1 text-success fas fa-bed icon"></i><strong>Bedrooms:</strong>
+                      {{ property.data[5] }}<br></span>
+                    <span class="mb-2 fs-1"><i
+                        class="me-1 text-success fas fa-bath icon"></i><strong>Bathrooms:</strong> {{ property.data[6]
+                      }}<br></span>
+                    <span class="mb-2 fs-1"><i class="me-1 text-success fas fa-toilet icon"></i><strong>Half
+                        Bathrooms:</strong> {{ property.data[7] }}<br></span>
+                  </p>
+                </div>
+              </div>
+              <div class="card mb-3 mb-lg-0">
+                <div class="card-header bg-light">
+                  <h5 class="mb-0">Whats Next</h5>
+                </div>
+                <div class="card-body fs--1">
+                  <button onclick="GetOfferFromUser()" class="btn btn-primary col-12 mt-2 mb-2 ">Make an offer</button>
+                  <a href="tel:+14708272901" class="btn btn-primary col-12 mt-2 mb-2 ">Win it now for ${{ property.price }}</a>
+                  <p class="text-800 fs-1 text-center mt-2">If someone buys for this price, no more offers will be
+                    accepted</p>
+                  <a href="tel:+14708272901" class="btn btn-primary col-12">Get financing for this deal</a>
+                </div>
+                <div class="card-footer bg-light p-0 border-top">
+                  <a class="btn btn-link d-block w-100" href="tel:+14708272901">
+                    Contact / Enquire<span class="fas fa-chevron-right ms-1 fs--2"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+            <div class="col-12 col-sm-auto text-center">
+              <p class="mb-0 text-600">Thank you for visiting Ameco Homes <span class="d-none d-sm-inline-block">|
+                </span><br class="d-sm-none" /> 2024 &copy; <a href="https://amecocapital.com">Ameco Homes</a></p>
+            </div>
+            <div class="col-12 col-sm-auto text-center">
+              <p class="mb-0 text-600">v2.0</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/vendors/popper/popper.min.js"></script>
+  <script src="/static/vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="/static/vendors/anchorjs/anchor.min.js"></script>
+  <script src="/static/vendors/is/is.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARdVcREeBK44lIWnv5-iPijKqvlSAVwbw&callback=initMap"
+    async></script>
+  <script src="/static/vendors/fontawesome/all.min.js"></script>
+  <script src="/static/vendors/lodash/lodash.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="/static/vendors/list.js/list.min.js"></script>
+  <script src="/static/assets/js/theme.js"></script>
+  <script src="/static/vendors/glightbox/glightbox.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', event => {
+      if (event.ctrlKey || event.metaKey) {
+        if (event.key === 'c') {
+          event.preventDefault();
+        }
+      }
+    });
+
+  </script>
+  <script>
+    function ShowShareDialog() {
+      if (navigator.share) {
+        navigator.share({
+          title: '{{PropertyTitle}}',
+          text: 'Check out this awesome property!',
+          url: window.location.href,
+        }).then(() => {
+          console.log('Content shared successfully');
+        }).catch((error) => {
+          console.error('Error sharing content:', error);
+        });
+      } else {
+        swal({
+          title: 'Share this page',
+          text: 'Copy the link below and share it with your friends',
+          content: {
+            element: 'input',
+            attributes: {
+              value: window.location.href,
+              readonly: true
+            }
+          },
+          buttons: {
+            cancel: 'Close'
+          }
+        });
+        const shareText = `Check out this awesome property! ${window.location.href}`;
+        navigator.clipboard.writeText(shareText);
+        navigator.clipboard.readText().then(text => {
+          console.log('Pasted content: ', text);
+        });
+      }
+    }
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    function GetOfferFromUser() {
+      Swal.fire({
+        title: 'Make an Offer',
+        html: `
+                <input id="price" class="swal2-input" placeholder="Offer Price">
+                <input id="name" class="swal2-input" placeholder="Your Name">
+                <input id="phone" class="swal2-input" placeholder="Your Phone (optional)">
+            `,
+        confirmButtonText: 'Send Offer',
+        showCancelButton: true,
+        cancelButtonText: 'Cancel',
+        preConfirm: () => {
+          const priceInput = Swal.getPopup().querySelector('#price').value;
+          const name = Swal.getPopup().querySelector('#name').value;
+          const phone = Swal.getPopup().querySelector('#phone').value;
+
+          // Sanitize price input
+          const sanitizedPriceInput = priceInput.replace(/[$,]/g, '').trim();
+
+          // Validate price
+          const price = parseFloat(sanitizedPriceInput);
+          if (isNaN(price) || price <= 100000) {
+            Swal.showValidationMessage('Please enter a valid price greater than 100,000.');
+            return false; // Prevent further action
+          }
+
+          if (!name) {
+            Swal.showValidationMessage('Please enter your name.');
+            return false; // Prevent further action
+          }
+
+          // Format price with dollar sign and commas
+          const formattedPrice = `$${price.toLocaleString()}`;
+
+          return { price: formattedPrice, name, phone };
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const { price, name, phone } = result.value;
+          const propertyName = "{{property.title}}"; // Replace with actual property name
+          const emailLink = `mailto:hello@amecohomes.com?subject=Offer%20on%20${encodeURIComponent(propertyName)}&body=Dear%20Agent,%0A%0AI%20would%20like%20to%20make%20an%20offer%20on%20the%20property%20${encodeURIComponent(propertyName)}.%20I%20am%20offering%20${encodeURIComponent(price)}.%0A%0APlease%20let%20me%20know%20how%20we%20should%20proceed.%0A%0ABest%20regards,%0A${encodeURIComponent(name)}%2C%20${encodeURIComponent(phone)}`;
+          window.location.href = emailLink;
+        }
+      });
+    }
+  </script>
+
+  <script
+    type="text/javascript">window.$crisp = []; window.CRISP_WEBSITE_ID = "ea02a6e9-3988-45f3-8949-7f0f854ba51a"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
+</body>
+
+</html>
