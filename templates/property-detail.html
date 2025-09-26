@@ -381,7 +381,7 @@
         if (result.isConfirmed) {
           const { price, name, phone } = result.value;
           const propertyName = "{{property.title}}"; // Replace with actual property name
-          const emailLink = `mailto:hello@amecohomes.com?subject=Offer%20on%20${encodeURIComponent(propertyName)}&body=Dear%20Agent,%0A%0AI%20would%20like%20to%20make%20an%20offer%20on%20the%20property%20${encodeURIComponent(propertyName)}.%20I%20am%20offering%20${encodeURIComponent(price)}.%0A%0APlease%20let%20me%20know%20how%20we%20should%20proceed.%0A%0ABest%20regards,%0A${encodeURIComponent(name)}%2C%20${encodeURIComponent(phone)}`;
+          const emailLink = `mailto:admin@amecocapital.com?subject=Offer%20on%20${encodeURIComponent(propertyName)}&body=Dear%20Agent,%0A%0AI%20would%20like%20to%20make%20an%20offer%20on%20the%20property%20${encodeURIComponent(propertyName)}.%20I%20am%20offering%20${encodeURIComponent(price)}.%0A%0APlease%20let%20me%20know%20how%20we%20should%20proceed.%0A%0ABest%20regards,%0A${encodeURIComponent(name)}%2C%20${encodeURIComponent(phone)}`;
           window.location.href = emailLink;
         }
       });
